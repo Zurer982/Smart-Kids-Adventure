@@ -1479,45 +1479,32 @@ window.scrollTo(0,0);
 
 }
 // Birds
+
 function showBirds(){
 
 let birds=[
-"Bird",
-"Eagle",
-"Parrot",
-"Sparrow",
-"Peacock",
-"Crow",
-"Duck",
-"Owl"
+["Eagle 🦅"],
+["Parrot 🦜"],
+["Sparrow 🐦"],
+["Peacock 🦚"],
+["Crow 🐦‍⬛"],
+["Duck 🦆"],
+["Owl 🦉"]
 ];
 
-let html=`<h2>🐦 Birds</h2>`;
+let box=document.getElementById("content");
+box.innerHTML="";
 
-birds.forEach(bird=>{
-
-html+=`
-
+birds.forEach(b=>{
+box.innerHTML += `
 <div class="card">
-
-<div class="big-emoji">🐦</div>
-
-<h2>${bird}</h2>
-
-<button class="listen-btn" onclick="speak('${bird}')">
-🔊 Listen
-</button>
-
+<h2>${b[0]}</h2>
+<button onclick="speak('${b[0]}')">🔊 Listen</button>
 </div>
-
 `;
-
 });
 
-document.getElementById("content").innerHTML=html;
-
 }
-
 
 // Body Parts
 function showBodyParts(){
@@ -1573,7 +1560,7 @@ let days=[
 "Sunday"
 ];
 
-let html=`<h2>📅 Days</h2>`;
+let html=`<h2> Days</h2>`;
 
 days.forEach(day=>{
 
