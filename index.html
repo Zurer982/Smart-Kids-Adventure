@@ -29,17 +29,37 @@
 <!-- Menu -->
 <div class="menu">
 
-<button class="alphabet" onclick="showAlphabet()">🔤 Alphabet</button>
+<button class="alphabet" onclick="showAlphabet()">
+    <span class="emoji">🔤</span>
+    <span class="text">Alphabet</span>
+</button>
 
-<button class="numbers" onclick="showNumbers()">🔢 Numbers</button>
+<button class="numbers" onclick="showNumbers()">
+    <span class="emoji">🔢</span>
+    <span class="text">Numbers</span>
+</button>
 
-<button class="colors" onclick="showColors()">🎨 Colors</button>
 
-<button class="animals" onclick="showAnimals()">🐘 Animals</button>
 
-<button class="fruits" onclick="showFruits()">🍎 Fruits</button>
+<button class="colors" onclick="showColors()">
+    <span class="emoji">🎨</span>
+    <span class="text">Colors</span>
+</button>
+<button class="animals" onclick="showAnimals()">
+    <span class="emoji">🐘</span>
+    <span class="text">Animals</span>
+</button>
 
-<button class="math" onclick="showMath()">➕ Math</button>
+<button class="fruits" onclick="showFruits()">
+    <span class="emoji">🍎</span>
+    <span class="text">Fruits</span>
+</button>
+
+<button class="math" onclick="showMath()">
+    <span class="emoji">➕</span>
+    <span class="text">Math</span>
+</button>
+
 
 <button class="games" onclick="showGames()">🎮 Games</button>
 
@@ -60,12 +80,12 @@
 
 <!-- Content -->
 <div id="content"></div>
-
 <!-- Footer -->
-<div class="footer">
-    <p><strong>Powered by</strong></p>
-    <p><strong>Nadeem Hussain Channa</strong><br>Primary School Teacher</p>
-</div>
+<footer class="footer">
+    <p class="powered">Powered by</p>
+    <h2 class="name">Nadeem Hussain Channa</h2>
+    <p class="teacher">Primary School Teacher</p>
+</footer>
 
 <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
 <script src="kids.js"></script>
@@ -75,7 +95,4 @@
 </audio>
 
 </body>
-</html>
-
-
-                                                  
+        </html>
