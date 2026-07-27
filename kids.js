@@ -1227,4 +1227,241 @@ document.getElementById("content").innerHTML = `
 
 <h3>🏅 Medals : ${nqMedals}</h3>
 
-<h3>✅ Correct : $
+<h3>✅ Correct : ${nqCorrect}</h3>
+
+<h3>❌ Wrong : ${nqWrong}</h3>
+
+<h3>🎯 Score : ${nqScore}</h3>
+
+<h3>🏆 Best Score : ${getHighScore()}</h3>
+
+<h3>📊 Percentage : ${percent}%</h3>
+
+<h2>${grade}</h2>
+
+<br>
+
+<button onclick="numberQuiz()">🔄 Play Again</button>
+
+<br><br>
+
+<button onclick="goHome()">🏠 Home</button>
+
+</div>
+
+`;
+
+}
+function showShapes(){
+
+let shapes=[
+["⚪ Circle","Circle"],
+["⬜ Square","Square"],
+["🔺 Triangle","Triangle"],
+["▭ Rectangle","Rectangle"],
+["⭐ Star","Star"],
+["❤️ Heart","Heart"],
+["🔷 Diamond","Diamond"],
+["🥚 Oval","Oval"]
+];
+
+let html="<h2>🔷 Shapes</h2>";
+
+shapes.forEach(s=>{
+html+=`
+<div class="card">
+<h1 style="font-size:60px;">${s[0]}</h1>
+<button onclick="speak('${s[1]}')">🔊 Listen</button>
+</div>`;
+});
+
+document.getElementById("content").innerHTML=html;
+
+}
+function showVehicles(){
+
+let vehicles=[
+["✈️","Airplane"],
+["🚲","Bicycle"],
+["🚗","Car"],
+["🚚","Dump Truck"],
+["🚜","Excavator"],
+["⛴️","Ferry"],
+["⛽","Gas Truck"],
+["🚁","Helicopter"],
+["🚛","Ice Cream Truck"],
+["🛩️","Jet"],
+["🛶","Kayak"],
+["🚂","Locomotive"],
+["🏍️","Motorcycle"],
+["🚐","Minivan"],
+["🚓","Police Car"],
+["🚀","Rocket"],
+["⛵","Sailboat"],
+["🚆","Train"],
+["🚲","Unicycle"],
+["🚐","Van"],
+["🦽","Wheelchair"],
+["🚤","X-Speed Boat"],
+["🛥️","Yacht"],
+["🚓","Zebra Crossing Patrol Car"]
+];
+
+let html="<h2>🚗 Vehicles A-Z</h2>";
+
+vehicles.forEach(v=>{
+
+html+=`
+<div class="card">
+
+<h1 style="font-size:45px;">${v[0]}</h1>
+
+<h2>${v[1]}</h2>
+
+<button onclick="speak('${v[1]}. This is a ${v[1]}.')">
+🔊 Listen
+</button>
+
+</div>
+`;
+
+});
+
+document.getElementById("content").innerHTML=html;
+
+}
+function showBirds(){
+
+let birds=[
+["🦅","Eagle"],
+["🦜","Parrot"],
+["🐦","Sparrow"],
+["🦉","Owl"],
+["🦆","Duck"],
+["🦢","Swan"],
+["🦚","Peacock"],
+["🐧","Penguin"],
+["🦩","Flamingo"],
+["🕊️","Dove"],
+["🐥","Chick"],
+["🐓","Rooster"],
+["🐔","Hen"],
+["🐦‍⬛","Crow"],
+["🦃","Turkey"],
+["🦤","Dodo"],
+["🦇","Bat"],
+["🪿","Goose"],
+["🐤","Baby Bird"],
+["🦅","Hawk"]
+];
+
+let html="<h2>🐦 Birds</h2>";
+
+birds.forEach(b=>{
+
+html+=`
+<div class="card">
+
+<h1 style="font-size:45px;">${b[0]}</h1>
+
+<h2>${b[1]}</h2>
+
+<button onclick="speak('${b[1]}. This is a ${b[1]}.')">
+🔊 Listen
+</button>
+
+</div>
+`;
+
+});
+
+document.getElementById("content").innerHTML=html;
+
+}
+function showBodyParts(){
+
+let bodyParts=[
+["👀","Eyes"],
+["👂","Ears"],
+["👃","Nose"],
+["👄","Mouth"],
+["😁","Teeth"],
+["👅","Tongue"],
+["💇","Hair"],
+["🧠","Brain"],
+["❤️","Heart"],
+["💪","Arm"],
+["✋","Hand"],
+["👆","Finger"],
+["🦵","Leg"],
+["🦶","Foot"],
+["🦴","Bone"],
+["🫁","Lungs"],
+["🫀","Heart Organ"],
+["🧍","Body"],
+["🦿","Knee"],
+["🧒","Head"]
+];
+
+let html="<h2>👨‍👩‍👧 Body Parts</h2>";
+
+bodyParts.forEach(b=>{
+
+html+=`
+<div class="card">
+
+<h1 style="font-size:45px;">${b[0]}</h1>
+
+<h2>${b[1]}</h2>
+
+<button onclick="speak('${b[1]}. This is a ${b[1]}.')">
+🔊 Listen
+</button>
+
+</div>
+`;
+
+});
+
+document.getElementById("content").innerHTML=html;
+
+}
+function showDaysMonths(){
+
+let days=[
+"Monday","Tuesday","Wednesday",
+"Thursday","Friday","Saturday","Sunday"
+];
+
+let months=[
+"January","February","March","April","May","June",
+"July","August","September","October","November","December"
+];
+
+let html="<h2>🌍 Days & Months</h2>";
+
+html+="<h3>📅 Days</h3>";
+
+days.forEach(d=>{
+html+=`
+<div class="card">
+<h2>${d}</h2>
+<button onclick="speak('${d}')">🔊 Listen</button>
+</div>`;
+});
+
+html+="<h3>🗓️ Months</h3>";
+
+months.forEach(m=>{
+html+=`
+<div class="card">
+<h2>${m}</h2>
+<button onclick="speak('${m}')">🔊 Listen</button>
+</div>`;
+});
+
+document.getElementById("content").innerHTML=html;
+
+    }
+    
+
