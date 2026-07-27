@@ -298,8 +298,7 @@ randomQuestion();
 
 },1000);
 
-}
-
+    }
 function showMath(){
 
 studentName = prompt("👦 Enter Student Name");
@@ -797,8 +796,8 @@ let aqTime = 30;
 let aqTimer;
 
 function alphabetQuiz(){
-
-aqCurrent = 0;
+    
+    aqCurrent = 0;
 aqScore = 0;
 aqStars = 0;
 aqMedals = 0;
@@ -1193,8 +1192,7 @@ if(nqCurrent > 20){
 
 }
 
-}
-
+    }
 function numberResult(){
 
 saveHighScore(nqScore);
@@ -1463,5 +1461,4 @@ html+=`
 document.getElementById("content").innerHTML=html;
 
     }
-    
-
+   
