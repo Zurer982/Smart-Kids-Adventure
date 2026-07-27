@@ -25,159 +25,276 @@ function welcomeSound(){
 function showAlphabet(){
 
 let alphabet=[
-["A","Apple 🍎"],
-["B","Ball ⚽"],
-["C","Cat 🐱"],
-["D","Dog 🐶"],
-["E","Elephant 🐘"],
-["F","Fish 🐟"],
-["G","Grapes 🍇"],
-["H","Horse 🐴"],
-["I","Ice Cream 🍦"],
-["J","Jug 🏺"],
-["K","Kite 🪁"],
-["L","Lion 🦁"],
-["M","Monkey 🐒"],
-["N","Nest 🪺"],
-["O","Orange 🍊"],
-["P","Parrot 🦜"],
-["Q","Queen 👑"],
-["R","Rabbit 🐰"],
-["S","Sun ☀️"],
-["T","Tiger 🐯"],
-["U","Umbrella ☂️"],
-["V","Van 🚐"],
-["W","Watch ⌚"],
-["X","Xylophone 🎼"],
-["Y","Yo-Yo 🪀"],
-["Z","Zebra 🦓"]
+["A","Apple","🍎"],
+["B","Ball","⚽"],
+["C","Cat","🐱"],
+["D","Dog","🐶"],
+["E","Elephant","🐘"],
+["F","Fish","🐟"],
+["G","Grapes","🍇"],
+["H","Horse","🐴"],
+["I","Ice Cream","🍦"],
+["J","Jug","🏺"],
+["K","Kite","🪁"],
+["L","Lion","🦁"],
+["M","Monkey","🐒"],
+["N","Nest","🪺"],
+["O","Orange","🍊"],
+["P","Parrot","🦜"],
+["Q","Queen","👑"],
+["R","Rabbit","🐰"],
+["S","Sun","☀️"],
+["T","Tiger","🐯"],
+["U","Umbrella","☂️"],
+["V","Van","🚐"],
+["W","Watch","⌚"],
+["X","Xylophone","🎼"],
+["Y","Yo-Yo","🪀"],
+["Z","Zebra","🦓"]
 ];
 
-let html="<h2>🔤 Alphabet A-Z</h2>";
+let html = `
+<h2>🔤 Alphabet A-Z</h2>
+
+<button class="home-btn" onclick="location.reload()">
+🏠 Home
+</button>
+`;
 
 alphabet.forEach(a=>{
-html+=`
+
+html += `
+
 <div class="card">
-<h3>${a[0]} - ${a[1]}</h3>
-<button onclick="speak('${a[0]} for ${a[1]}')">🔊 Listen</button>
-</div>`;
+
+<div class="big-emoji">${a[2]}</div>
+
+<h2>${a[0]}</h2>
+
+<h3>${a[1]}</h3>
+
+<button class="listen-btn"
+onclick="speak('${a[0]} for ${a[1]}')">
+
+🔊 Listen
+
+</button>
+
+</div>
+
+`;
+
 });
 
 document.getElementById("content").innerHTML=html;
-}
 
+window.scrollTo(0,0);
+
+}
+// Numbers
 function showNumbers(){
 
-let words=[
-"One","Two","Three","Four","Five","Six","Seven","Eight","Nine","Ten",
-"Eleven","Twelve","Thirteen","Fourteen","Fifteen","Sixteen","Seventeen","Eighteen","Nineteen","Twenty",
-"Twenty One","Twenty Two","Twenty Three","Twenty Four","Twenty Five","Twenty Six","Twenty Seven","Twenty Eight","Twenty Nine","Thirty",
-"Thirty One","Thirty Two","Thirty Three","Thirty Four","Thirty Five","Thirty Six","Thirty Seven","Thirty Eight","Thirty Nine","Forty",
-"Forty One","Forty Two","Forty Three","Forty Four","Forty Five","Forty Six","Forty Seven","Forty Eight","Forty Nine","Fifty",
-"Fifty One","Fifty Two","Fifty Three","Fifty Four","Fifty Five","Fifty Six","Fifty Seven","Fifty Eight","Fifty Nine","Sixty",
-"Sixty One","Sixty Two","Sixty Three","Sixty Four","Sixty Five","Sixty Six","Sixty Seven","Sixty Eight","Sixty Nine","Seventy",
-"Seventy One","Seventy Two","Seventy Three","Seventy Four","Seventy Five","Seventy Six","Seventy Seven","Seventy Eight","Seventy Nine","Eighty",
-"Eighty One","Eighty Two","Eighty Three","Eighty Four","Eighty Five","Eighty Six","Eighty Seven","Eighty Eight","Eighty Nine","Ninety",
-"Ninety One","Ninety Two","Ninety Three","Ninety Four","Ninety Five","Ninety Six","Ninety Seven","Ninety Eight","Ninety Nine","One Hundred"
+let numberWords=[
+"",
+"One","Two","Three","Four","Five","Six","Seven","Eight","Nine","Ten"
 ];
 
-let html="<h2>🔢 Numbers 1-100</h2>";
+
+let html=`
+<h2>🔢 Numbers 1 - 100</h2>
+
+<button class="home-btn" onclick="location.reload()">
+🏠 Home
+</button>
+`;
+
 
 for(let i=1;i<=100;i++){
 
 html+=`
-<div class="card">
-<h3>${i} - ${words[i-1]}</h3>
 
-<button onclick="speak('${i}. ${words[i-1]}')">
+<div class="card">
+
+<h2>🔢 ${i} ${numberWords[i] || ""}</h2>
+
+<button class="listen-btn" onclick="speak('${numberWords[i] || i}')">
 🔊 Listen
 </button>
 
 </div>
+
 `;
 
 }
 
+
 document.getElementById("content").innerHTML=html;
+
+window.scrollTo(0,0);
 
 }
 // Colors
 function showColors(){
 
 let colors=[
-["Red 🔴","Red"],
-["Blue 🔵","Blue"],
-["Green 🟢","Green"],
-["Yellow 🟡","Yellow"],
-["Black ⚫","Black"],
-["White ⚪","White"],
-["Pink 🩷","Pink"],
-["Orange 🟠","Orange"]
+["❤️","Red"],
+["💙","Blue"],
+["💚","Green"],
+["💛","Yellow"],
+["🧡","Orange"],
+["💜","Purple"],
+["🤍","White"],
+["🖤","Black"],
+["🤎","Brown"],
+["🩷","Pink"]
 ];
 
-let html="<h2>🎨 Colors</h2>";
+let html=`
+<h2>🎨 Colors</h2>
+
+<button class="home-btn" onclick="location.reload()">
+🏠 Home
+</button>
+`;
 
 colors.forEach(c=>{
+
 html+=`
+
 <div class="card">
-<h3>${c[0]}</h3>
-<button onclick="speak('${c[1]}')">🔊 Listen</button>
-</div>`;
+
+<div class="big-emoji">${c[0]}</div>
+
+<h2>${c[1]}</h2>
+
+<button class="listen-btn"
+onclick="speak('${c[1]}')">
+
+🔊 Listen
+
+</button>
+
+</div>
+
+`;
+
 });
 
 document.getElementById("content").innerHTML=html;
+
+window.scrollTo(0,0);
+
 }
 
 // Animals
 function showAnimals(){
 
 let animals=[
-["A","Ant 🐜"],["B","Bear 🐻"],["C","Cat 🐱"],["D","Dog 🐶"],
-["E","Elephant 🐘"],["F","Fox 🦊"],["G","Giraffe 🦒"],["H","Horse 🐴"],
-["I","Iguana 🦎"],["J","Jaguar 🐆"],["K","Kangaroo 🦘"],["L","Lion 🦁"],
-["M","Monkey 🐒"],["N","Nightingale 🐦"],["O","Owl 🦉"],["P","Panda 🐼"],
-["Q","Quail 🐦"],["R","Rabbit 🐰"],["S","Snake 🐍"],["T","Tiger 🐯"],
-["U","Urial 🐏"],["V","Vulture 🦅"],["W","Whale 🐳"],["X","Xerus 🐿️"],
-["Y","Yak 🦬"],["Z","Zebra 🦓"]
+["🐘","Elephant"],
+["🦁","Lion"],
+["🐯","Tiger"],
+["🐶","Dog"],
+["🐱","Cat"],
+["🐴","Horse"],
+["🐮","Cow"],
+["🐑","Sheep"],
+["🐐","Goat"],
+["🐒","Monkey"],
+["🐻","Bear"],
+["🦓","Zebra"],
+["🦒","Giraffe"],
+["🦊","Fox"],
+["🐰","Rabbit"],
+["🦌","Deer"],
+["🐪","Camel"],
+["🦛","Hippo"],
+["🦏","Rhino"],
+["🐼","Panda"]
 ];
 
-let html="<h2>🐘 Animals A-Z</h2>";
+let html=`
+<h2>🐘 Animals</h2>
+
+<button class="home-btn" onclick="location.reload()">
+🏠 Home
+</button>
+`;
 
 animals.forEach(a=>{
+
 html+=`
 <div class="card">
-<h3>${a[0]} - ${a[1]}</h3>
-<button onclick="speak('${a[0]} for ${a[1]}')">🔊 Listen</button>
-</div>`;
+
+<div class="big-emoji">${a[0]}</div>
+
+<h2>${a[1]}</h2>
+
+<button class="listen-btn" onclick="speak('${a[1]}')">
+🔊 Listen
+</button>
+
+</div>
+`;
+
 });
 
 document.getElementById("content").innerHTML=html;
+window.scrollTo(0,0);
+
 }
+
+
 
 // Fruits
 function showFruits(){
 
 let fruits=[
-["A","Apple 🍎"],["B","Banana 🍌"],["C","Cherry 🍒"],["D","Date 🌴"],
-["E","Elderberry 🫐"],["F","Fig 🟣"],["G","Grapes 🍇"],["H","Honeydew 🍈"],
-["I","Indian Fig 🍈"],["J","Jackfruit 🍈"],["K","Kiwi 🥝"],["L","Lemon 🍋"],
-["M","Mango 🥭"],["N","Nectarine 🍑"],["O","Orange 🍊"],["P","Papaya 🧡"],
-["Q","Quince 🍐"],["R","Raspberry 🍓"],["S","Strawberry 🍓"],["T","Tomato 🍅"],
-["U","Ugli Fruit 🍊"],["V","Velvet Apple 🍎"],["W","Watermelon 🍉"],
-["X","Xigua 🍉"],["Y","Yellow Passion Fruit 🟡"],["Z","Zucchini 🥒"]
+["🍎","Apple"],
+["🍌","Banana"],
+["🍇","Grapes"],
+["🍊","Orange"],
+["🥭","Mango"],
+["🍍","Pineapple"],
+["🍉","Watermelon"],
+["🍓","Strawberry"],
+["🥝","Kiwi"],
+["🍒","Cherry"],
+["🍐","Pear"],
+["🍑","Peach"],
+["🥥","Coconut"],
+["🍋","Lemon"],
+["🫐","Blueberry"]
 ];
 
-let html="<h2>🍎 Fruits A-Z</h2>";
+let html=`
+<h2>🍎 Fruits</h2>
+
+<button class="home-btn" onclick="location.reload()">
+🏠 Home
+</button>
+`;
 
 fruits.forEach(f=>{
+
 html+=`
 <div class="card">
-<h3>${f[0]} - ${f[1]}</h3>
-<button onclick="speak('${f[0]} for ${f[1]}')">🔊 Listen</button>
-</div>`;
+
+<div class="big-emoji">${f[0]}</div>
+
+<h2>${f[1]}</h2>
+
+<button class="listen-btn" onclick="speak('${f[1]}')">
+🔊 Listen
+</button>
+
+</div>
+`;
+
 });
 
 document.getElementById("content").innerHTML=html;
+window.scrollTo(0,0);
+
 }
 
 
@@ -289,8 +406,7 @@ if(currentQuestion > totalQuestions){
 showResult();
 
 }else{
-
-randomQuestion();
+    randomQuestion();
 
 }
 
@@ -298,7 +414,8 @@ randomQuestion();
 
 },1000);
 
-    }
+}
+
 function showMath(){
 
 studentName = prompt("👦 Enter Student Name");
@@ -686,8 +803,7 @@ html+=`</div>`;
 document.getElementById("content").innerHTML = html;
 
 }
-
-function popBalloon(letter){
+    function popBalloon(letter){
 
 balloonScore += 10;
 
@@ -796,8 +912,8 @@ let aqTime = 30;
 let aqTimer;
 
 function alphabetQuiz(){
-    
-    aqCurrent = 0;
+
+aqCurrent = 0;
 aqScore = 0;
 aqStars = 0;
 aqMedals = 0;
@@ -1082,8 +1198,7 @@ nqStars = 0;
 nqMedals = 0;
 nqCorrect = 0;
 nqWrong = 0;
-
-nextNumberQuestion();
+    nextNumberQuestion();
 
 }
 
@@ -1192,7 +1307,8 @@ if(nqCurrent > 20){
 
 }
 
-    }
+}
+
 function numberResult(){
 
 saveHighScore(nqScore);
@@ -1250,125 +1366,150 @@ document.getElementById("content").innerHTML = `
 `;
 
 }
+// Shapes
 function showShapes(){
 
 let shapes=[
-["⚪ Circle","Circle"],
-["⬜ Square","Square"],
-["🔺 Triangle","Triangle"],
-["▭ Rectangle","Rectangle"],
-["⭐ Star","Star"],
-["❤️ Heart","Heart"],
-["🔷 Diamond","Diamond"],
-["🥚 Oval","Oval"]
+["⚪","Circle"],
+["⬜","Square"],
+["🔺","Triangle"],
+["▭","Rectangle"],
+["⭐","Star"],
+["❤️","Heart"],
+["💎","Diamond"],
+["⬟","Pentagon"],
+["⬢","Hexagon"],
+["🥚","Oval"]
 ];
 
-let html="<h2>🔷 Shapes</h2>";
+let html=`
+<h2>🔷 Shapes</h2>
+
+<button class="home-btn" onclick="location.reload()">
+🏠 Home
+</button>
+`;
 
 shapes.forEach(s=>{
+
 html+=`
+
 <div class="card">
-<h1 style="font-size:60px;">${s[0]}</h1>
-<button onclick="speak('${s[1]}')">🔊 Listen</button>
-</div>`;
+
+<div class="big-emoji">${s[0]}</div>
+
+<h2>${s[1]}</h2>
+
+<button class="listen-btn"
+onclick="speak('${s[1]}')">
+
+🔊 Listen
+
+</button>
+
+</div>
+
+`;
+
 });
 
 document.getElementById("content").innerHTML=html;
 
+window.scrollTo(0,0);
+
 }
+
+
+
+// Vehicles
 function showVehicles(){
 
 let vehicles=[
-["✈️","Airplane"],
-["🚲","Bicycle"],
 ["🚗","Car"],
-["🚚","Dump Truck"],
-["🚜","Excavator"],
-["⛴️","Ferry"],
-["⛽","Gas Truck"],
-["🚁","Helicopter"],
-["🚛","Ice Cream Truck"],
-["🛩️","Jet"],
-["🛶","Kayak"],
-["🚂","Locomotive"],
-["🏍️","Motorcycle"],
-["🚐","Minivan"],
-["🚓","Police Car"],
-["🚀","Rocket"],
-["⛵","Sailboat"],
+["🚌","Bus"],
 ["🚆","Train"],
-["🚲","Unicycle"],
-["🚐","Van"],
-["🦽","Wheelchair"],
-["🚤","X-Speed Boat"],
-["🛥️","Yacht"],
-["🚓","Zebra Crossing Patrol Car"]
+["✈️","Airplane"],
+["🚁","Helicopter"],
+["🚲","Bicycle"],
+["🏍️","Motorcycle"],
+["🚜","Tractor"],
+["🚢","Ship"],
+["⛵","Boat"],
+["🚒","Fire Truck"],
+["🚑","Ambulance"],
+["🚓","Police Car"],
+["🚚","Truck"],
+["🚐","Van"]
 ];
 
-let html="<h2>🚗 Vehicles A-Z</h2>";
+let html=`
+<h2>🚗 Vehicles</h2>
+
+<button class="home-btn" onclick="location.reload()">
+🏠 Home
+</button>
+`;
 
 vehicles.forEach(v=>{
 
 html+=`
+
 <div class="card">
 
-<h1 style="font-size:45px;">${v[0]}</h1>
+<div class="big-emoji">${v[0]}</div>
 
 <h2>${v[1]}</h2>
 
-<button onclick="speak('${v[1]}. This is a ${v[1]}.')">
+<button class="listen-btn"
+onclick="speak('${v[1]}')">
+
 🔊 Listen
+
 </button>
 
 </div>
+
 `;
 
 });
 
 document.getElementById("content").innerHTML=html;
 
+window.scrollTo(0,0);
+
 }
+// Birds
 function showBirds(){
 
 let birds=[
-["🦅","Eagle"],
-["🦜","Parrot"],
-["🐦","Sparrow"],
-["🦉","Owl"],
-["🦆","Duck"],
-["🦢","Swan"],
-["🦚","Peacock"],
-["🐧","Penguin"],
-["🦩","Flamingo"],
-["🕊️","Dove"],
-["🐥","Chick"],
-["🐓","Rooster"],
-["🐔","Hen"],
-["🐦‍⬛","Crow"],
-["🦃","Turkey"],
-["🦤","Dodo"],
-["🦇","Bat"],
-["🪿","Goose"],
-["🐤","Baby Bird"],
-["🦅","Hawk"]
+"Bird",
+"Eagle",
+"Parrot",
+"Sparrow",
+"Peacock",
+"Crow",
+"Duck",
+"Owl"
 ];
 
-let html="<h2>🐦 Birds</h2>";
+let html=`<h2>🐦 Birds</h2>`;
 
-birds.forEach(b=>{
+birds.forEach(bird=>{
 
 html+=`
+
 <div class="card">
 
-<h1 style="font-size:45px;">${b[0]}</h1>
+<div class="big-emoji">🐦</div>
 
-<h2>${b[1]}</h2>
+<h2>${bird}</h2>
 
-<button onclick="speak('${b[1]}. This is a ${b[1]}.')">
+<button class="listen-btn" onclick="speak('${bird}')">
 🔊 Listen
 </button>
 
 </div>
+
 `;
 
 });
@@ -1376,47 +1517,40 @@ html+=`
 document.getElementById("content").innerHTML=html;
 
 }
+
+
+// Body Parts
 function showBodyParts(){
 
-let bodyParts=[
-["👀","Eyes"],
-["👂","Ears"],
-["👃","Nose"],
-["👄","Mouth"],
-["😁","Teeth"],
-["👅","Tongue"],
-["💇","Hair"],
-["🧠","Brain"],
-["❤️","Heart"],
-["💪","Arm"],
-["✋","Hand"],
-["👆","Finger"],
-["🦵","Leg"],
-["🦶","Foot"],
-["🦴","Bone"],
-["🫁","Lungs"],
-["🫀","Heart Organ"],
-["🧍","Body"],
-["🦿","Knee"],
-["🧒","Head"]
+let parts=[
+"Eye",
+"Nose",
+"Ear",
+"Hand",
+"Leg",
+"Foot",
+"Mouth",
+"Head"
 ];
 
-let html="<h2>👨‍👩‍👧 Body Parts</h2>";
+let html=`<h2>👦 Body Parts</h2>`;
 
-bodyParts.forEach(b=>{
+parts.forEach(part=>{
 
 html+=`
+
 <div class="card">
 
-<h1 style="font-size:45px;">${b[0]}</h1>
+<div class="big-emoji">👦</div>
 
-<h2>${b[1]}</h2>
+<h2>${part}</h2>
 
-<button onclick="speak('${b[1]}. This is a ${b[1]}.')">
+<button class="listen-btn" onclick="speak('${part}')">
 🔊 Listen
 </button>
 
 </div>
+
 `;
 
 });
@@ -1424,41 +1558,79 @@ html+=`
 document.getElementById("content").innerHTML=html;
 
 }
-function showDaysMonths(){
+
+
+// Days
+function showDays(){
 
 let days=[
-"Monday","Tuesday","Wednesday",
-"Thursday","Friday","Saturday","Sunday"
+"Monday",
+"Tuesday",
+"Wednesday",
+"Thursday",
+"Friday",
+"Saturday",
+"Sunday"
 ];
 
-let months=[
-"January","February","March","April","May","June",
-"July","August","September","October","November","December"
-];
+let html=`<h2>📅 Days</h2>`;
 
-let html="<h2>🌍 Days & Months</h2>";
+days.forEach(day=>{
 
-html+="<h3>📅 Days</h3>";
-
-days.forEach(d=>{
 html+=`
+
 <div class="card">
-<h2>${d}</h2>
-<button onclick="speak('${d}')">🔊 Listen</button>
-</div>`;
+
+<div class="big-emoji">📅</div>
+
+<h2>${day}</h2>
+
+<button class="listen-btn" onclick="speak('${day}')">
+🔊 Listen
+</button>
+
+</div>
+
+`;
+
 });
 
-html+="<h3>🗓️ Months</h3>";
+document.getElementById("content").innerHTML=html;
 
-months.forEach(m=>{
+}
+
+
+// Months
+function showMonths(){
+
+let months=[
+"January","February","March","April",
+"May","June","July","August",
+"September","October","November","December"
+];
+
+let html=`<h2>🗓️ Months</h2>`;
+
+months.forEach(month=>{
+
 html+=`
+
 <div class="card">
-<h2>${m}</h2>
-<button onclick="speak('${m}')">🔊 Listen</button>
-</div>`;
+
+<div class="big-emoji">🗓️</div>
+
+<h2>${month}</h2>
+
+<button class="listen-btn" onclick="speak('${month}')">
+🔊 Listen
+</button>
+
+</div>
+
+`;
+
 });
 
 document.getElementById("content").innerHTML=html;
 
     }
-   
