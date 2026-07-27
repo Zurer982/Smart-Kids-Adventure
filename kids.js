@@ -1568,7 +1568,7 @@ html+=`
 
 <div class="card">
 
-<div class="big-emoji">📅</div>
+<div class="big-emoji"></div>
 
 <h2>${day}</h2>
 
