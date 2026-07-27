@@ -1510,29 +1510,29 @@ box.innerHTML += `
 function showBodyParts(){
 
 let parts=[
-"Eye",
-"Nose",
-"Ear",
-"Hand",
-"Leg",
-"Foot",
-"Mouth",
-"Head"
+["Eye","👁️"],
+["Nose","👃"],
+["Ear","👂"],
+["Hand","✋"],
+["Leg","🦵"],
+["Foot","🦶"],
+["Mouth","👄"],
+["Head","🙂"]
 ];
 
 let html=`<h2>👦 Body Parts</h2>`;
 
-parts.forEach(part=>{
+parts.forEach(item=>{
 
 html+=`
 
 <div class="card">
 
-<div class="big-emoji">👦</div>
+<div class="big-emoji">${item[1]}</div>
 
-<h2>${part}</h2>
+<h2>${item[0]}</h2>
 
-<button class="listen-btn" onclick="speak('${part}')">
+<button class="listen-btn" onclick="speak('${item[0]}')">
 🔊 Listen
 </button>
 
